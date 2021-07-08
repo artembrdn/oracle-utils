@@ -12,4 +12,4 @@ based on PLSQL and Java in Oracle Database.
 ## STRING / CLOB
 
 * **Functions**
-  * [SPLIT](string/split.ddl) - splits the input string (varchar2 or clob) by pattern and outputs each substring in a separate line. Optimized for CLOB type inputs.
+  * [SPLIT](string/split_.ddl) - splits the input string (varchar2 or clob) by pattern and outputs each substring in a separate line. Optimized for CLOB type inputs.
