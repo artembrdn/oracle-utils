@@ -8,7 +8,8 @@ create or replace function distance_between (latitude_begin number,longitude_beg
    v_lng_begin BINARY_DOUBLE default longitude_begin;
    v_lat_end BINARY_DOUBLE default latitude_end;
    v_lng_end BINARY_DOUBLE default longitude_end;
-
+   -- the UDF pragma tells the compiler that the PL/SQL unit is a user defined function that is used primarily in SQL statements, which might improve its performance.
+   pragma UDF; 
 BEGIN
    v_lat_begin:=v_lat_begin*acos(-1d)/180.0d;
    v_lng_begin:=v_lng_begin*acos(-1d)/180.0d;
