@@ -13,3 +13,7 @@ based on PLSQL and Java in Oracle Database.
 
 * **Functions**
   * [SPLIT](string/split_.ddl) - splits the input string (varchar2 or clob) by pattern and outputs each substring in a separate line. Optimized for CLOB type inputs.
+  * [CLOB_REPLACE](string/clob_replace_f.ddl) - returns new clob with every occurrence of search_string replaced with replacement_string.
+
+* **Procedures**
+  * [CLOB_REPLACE](string/clob_replace.ddl) - returns new clob with every occurrence of search_string replaced with replacement_string.
