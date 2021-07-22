@@ -34,11 +34,12 @@ CREATE OR REPLACE  function clob_replace_func (source in clob, search_string in 
     end;
     
 BEGIN
+    --  find the positions of all occurrences
     find_res := find_all();
     dbms_lob.createtemporary(clob_out, true);
     dest_pos := 1;
     current_pos := 1;
-    
+    --  fill in clob_out with the source one and replace the occurrences of search_string with replacement_string
     IF (find_res.count > 0) THEN
         FOR i IN find_res.first .. find_res.last LOOP
             finded_pos := find_res(i);
@@ -58,14 +59,10 @@ BEGIN
                 END IF;
                 current_pos := current_pos + search_string_length;
                 dest_pos := dest_pos + replacement_string_length;
-
-
             END IF;
-
-
         END LOOP;
     END IF;
-
+    -- if there was no one occurrence or there is still data after the last occurrence
     IF (current_pos != dbms_lob.getlength(source) + 1) THEN
         dbms_lob.copy(clob_out, source, amount => dbms_lob.getlength(source) + 1 - current_pos, dest_offset => dest_pos, src_offset => current_pos);
     END IF;

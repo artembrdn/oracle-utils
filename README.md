@@ -21,5 +21,5 @@ based on PLSQL and Java in Oracle Database.
 
 ## UTILS
 
-* **JAVA**
-  * [READ DIRECTORY](utils/read_dir) - reads the list of files in the directory and puts it in a temporary table.
+* **FILE SYSTEM**
+  * [READ DIRECTORY](utils/read_dir) - JAVA procedure reads the list of files in the directory and puts it in a temporary table.
