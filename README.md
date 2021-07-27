@@ -15,6 +15,7 @@ based on PLSQL and Java in Oracle Database.
   * [SPLIT](string/split_.ddl) - splits the input string (varchar2 or clob) by pattern and outputs each substring in a separate line. Optimized for CLOB type inputs.
   * [CLOB REPLACE](string/clob_replace_f.ddl) - returns new clob with every occurrence of search_string replaced with replacement_string.
   * [IS NUMBER](string/is_number.ddl) - returns 1 if the string consists of only digits, 0 if string is null or string length = 0.
+  * [GET DATE](string/get_date.ddl) -  returns valid date or NULL, tries to convert a string to a date based on an array of masks.
 
 * **Procedures**
   * [CLOB REPLACE](string/clob_replace.ddl) - returns new clob with every occurrence of search_string replaced with replacement_string.
