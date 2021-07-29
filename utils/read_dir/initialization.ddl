@@ -1,10 +1,12 @@
 -- Create TEMPORARY table, cleaning on commit.
 -- The function will write the list of files in the directory to this table.
-CREATE GLOBAL TEMPORARY TABLE DIR_LIST_EXT (
+CREATE GLOBAL TEMPORARY TABLE DIR_LIST_EXT 
+(
   FD NUMBER 
 , FILENAME VARCHAR2(255 BYTE) 
 , FSIZE NUMBER 
 , FPATH VARCHAR2(255 BYTE) 
+, MODIF NUMBER 
 ) 
 ON COMMIT DELETE ROWS 
 NOPARALLEL;
@@ -13,3 +15,7 @@ NOPARALLEL;
 create or replace procedure get_dir_list_ext(p_directory in varchar2)
 as language java
 name 'DirList_ext.getList(java.lang.String)';
+--DirListStreamNoSQLJ version
+create or replace procedure get_dir_list(p_directory in varchar2, limit in number)
+as language java
+name 'DirList_ext.getList(java.lang.String, java.lang.Integer)';
