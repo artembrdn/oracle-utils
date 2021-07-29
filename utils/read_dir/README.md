@@ -25,6 +25,7 @@
   DirList_ext    | 26 sec | 0%
   DirListNoSQLJ  | 17 sec | 35%
   DirListStreamNoSQLJ  | 10 sec |62%
+  DirListStreamNoSQLJ without File class  | 1 sec |97%
 
 ##### EXAMPLE:
 *     CALL get_dir_list_ext('/mnt/directory');

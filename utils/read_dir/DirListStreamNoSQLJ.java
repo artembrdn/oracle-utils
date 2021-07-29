@@ -1,6 +1,8 @@
 // Get list directory contents Oracle Database, PL/SQL, Java).
 // For ORACLE >= 12.1.0.2 and JAVA version >= 1.7
 // The FASTEST Java function method with the ability to specify how many files to read.
+
+// For even greater speed, you can remove the File class, which extracts the meta data of the file.
 create or replace and COMPILE JAVA SOURCE NAMED "DirList_ext" as
 import java.io.*;
 import java.sql.*;
