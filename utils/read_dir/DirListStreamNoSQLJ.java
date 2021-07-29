@@ -11,12 +11,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class DirList_ext {
-	public static void getList(String directory, Integer limit) throws SQLException {
+    public static void getList(String directory, Integer limit) throws SQLException {
         int fileCounter = 0;
-        
+
         Connection conn = DriverManager.getConnection("jdbc:default:connection:");
         String sql = "INSERT into DIR_LIST_EXT (FD , FILENAME , FSIZE  , FPATH  , MODIF ) values (?,?,?,?,?)";
-        
+
         try {
             PreparedStatement pstmt = conn.prepareStatement(sql);
             for (Path path : Files.newDirectoryStream(Paths.get(directory))) {
