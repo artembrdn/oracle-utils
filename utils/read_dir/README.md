@@ -33,6 +33,6 @@
       CALL get_dir_list_ext('/mnt/directory', 0); 
       CALL get_dir_list_ext('/mnt/directory', 32000);
       
-      SELECT FD, FILENAME, FSIZE, FPATH FROM DIR_LIST_EXT;
+      SELECT FD, FILENAME, FSIZE, FPATH, MODIF FROM DIR_LIST_EXT;
 
 
