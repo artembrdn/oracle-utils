@@ -28,3 +28,10 @@ based on PLSQL and Java in Oracle Database.
 
 * **BACKUP**
   * [DB SOURCE](utils/db_src) - a simple backup of dba_source to the dump files and a simple reading of these files on the required date.
+
+
+## SQL
+
+* **DELETE**
+  * [DELETE DUPLICATES](sql/delete_duplicates.sql) - removing duplicates from a table without temporary tables.
+
