@@ -34,4 +34,5 @@ based on PLSQL and Java in Oracle Database.
 
 * **DELETE**
   * [DELETE DUPLICATES](sql/delete_duplicates.sql) - removing duplicates from a table without temporary tables.
+  * [DELETE HISTORY](sql/delete_history.sql) - removing historical data from a table without temporary tables.
 
