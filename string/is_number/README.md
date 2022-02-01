@@ -3,6 +3,7 @@
 📝 The function takes a string and returns 1 or 0 depending on whether the number is there or not.
  
 ***
+
 ##### There are several ways to write this function. Below is their comparison and code:
 * Using  to_number function whith exception :
   * [is_number.ddl(to_number)](/string/is_number/is_number_to_number.ddl)
