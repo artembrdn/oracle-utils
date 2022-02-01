@@ -67,8 +67,8 @@
       is_number(translate)  | 1.5 sec | 0.45 sec
       
   * Mixed dataset
-  **CONSTANT_VALUE := '1242142145'** 200,000 rows
-  **CONSTANT_VALUE := '124214Q2145'** 50,000 rows
+  **CONSTANT_VALUE := '1242142145'** 200,000 rows    
+  **CONSTANT_VALUE := '124214Q2145'** 50,000 rows    
   **CONSTANT_VALUE := 'Q124214Q2145'** 50,000 rows
 
       Function name  | Execution time  | Execution time parallel 4
