@@ -66,7 +66,7 @@
       is_number(regexp_like)  | 1.9 sec | 0.55 sec
       is_number(translate)  | 1.5 sec | 0.45 sec
       
-  * Mixed dataset
+  * Mixed dataset    
   **CONSTANT_VALUE := '1242142145'** 200,000 rows    
   **CONSTANT_VALUE := '124214Q2145'** 50,000 rows    
   **CONSTANT_VALUE := 'Q124214Q2145'** 50,000 rows
