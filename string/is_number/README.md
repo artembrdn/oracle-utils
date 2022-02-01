@@ -4,9 +4,10 @@
  
 ***
 
-##### There are several ways to write this function. Below is their comparison and code:
+##### There are several ways to write this function. Below is their comparison and code
+##### OPTIONS:
 * Using  to_number function whith exception :
-  * [is_number.ddl(to_number)](/string/is_number/is_number_to_number.ddl)
+  * [is_number.sql(to_number)](/string/is_number/is_number_to_number.ddl)
     >     begin
     >       v_new_num := TO_NUMBER(a_string);
     >       return 1;
@@ -15,7 +16,7 @@
     >       return 0;
     >     end;
 * Using  asci code of characters :
-  * [is_number.ddl(asci code)](/string/is_number/is_number_asci.ddl)
+  * [is_number.sql(asci code)](/string/is_number/is_number_asci.ddl)
     >     loop
     >       char_ := ascii( substr( a_string, k, 1 ) );
     >       if(char_ >= 48 and char_ <= 57) then --ASCII NUMBER CHAR CODE
@@ -25,13 +26,13 @@
     >       end if;
     >     end loop;
 * Using  regexp_like :
-  * [is_number.ddl(regexp_like)](/string/is_number/is_number_regexp_like.ddl)
+  * [is_number.sql(regexp_like)](/string/is_number/is_number_regexp_like.ddl)
     >     return case when regexp_like(a_string, '^[[:digit:]]+$') then 1 else 0 end;
 * Using  translate :
-  * [is_number.ddl(translate)](/string/is_number/is_number_translate.ddl)
+  * [is_number.sql(translate)](/string/is_number/is_number_translate.ddl)
     >     return  case when TRANSLATE(a_string,'X0123456789','X') is null then 1 else 0 end;
 
-##### NOTES:
+##### COMPARE:
 * Compare features in a 300,000 row table with different datasets 
      >     create table number_check (col1 varchar2(200))
     Two select statements to compare execution time:
@@ -78,10 +79,10 @@
       is_number(translate)  | 1.5 sec | 0.45 sec
 ##### CONCLUSION:     
 
->    If the function will be used from **PLSQL or SQL (without parallelism)**,then the [is_number.ddl(to_number)](/string/is_number/is_number_to_number.ddl)
+>    If the function will be used from **PLSQL or SQL (without parallelism)**,then the [is_number.sql(to_number)](/string/is_number/is_number_to_number.ddl)
 option should be unambiguously chosen if the number is expected to be valid in most cases.
 
-> If you plan to call from **SQL with parallelism** 🚀, then the best option for the [is_number.ddl(translate)](/string/is_number/is_number_translate.ddl) function.
+> If you plan to call from **SQL with parallelism** 🚀, then the best option for the [is_number.sql(translate)](/string/is_number/is_number_translate.ddl) function.
 
 > ❗ However, remember that when calling functions from SQL, a context switch occurs 
 and the fastest way to select rows with a check for a number is to use translate directly in the SQL statement (0.07 sec vs 0.45 sec). 
